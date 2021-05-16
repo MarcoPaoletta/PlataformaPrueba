@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 189.451, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 189.451, 10 )
+
+[node name="Map" type="Node2D"]
+
+[node name="GroundCollection" type="Node2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="GroundCollection"]
+position = Vector2( 187.099, 236.056 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollection/Ground"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground2" type="StaticBody2D" parent="GroundCollection"]
+position = Vector2( 833.357, 272.649 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollection/Ground2"]
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
